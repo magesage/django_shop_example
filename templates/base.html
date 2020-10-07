@@ -9,7 +9,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title>
           {% block title %}
-          The website title
+          	Сейчас на сайте ведутся работы...
           {% endblock %}
         </title>
         <meta name="description" content="">
@@ -54,7 +54,7 @@
 
 		        <nav id="mainmenu" class="mainmenu">
 					<ul>
-						<li class="logo-wrapper"><a href="index.html"><img src="{% static 'img/site-logo.png' %}" alt="Multipurpose Twitter Bootstrap Template"></a></li>
+						<li class="logo-wrapper"><a href="/"><img src="{% static 'img/site-logo.png' %}" alt="Multipurpose Twitter Bootstrap Template"></a></li>
 						<li>
 							<form action="action.some">
 							<input type="search" id="search-form" name="search" placeholder="Поиск по сайту">
@@ -106,299 +106,25 @@
 			</div>
 		</div>
 
-        <!-- Homepage Slider -->
-        <div class="homepage-slider">
-        	<div id="sequence">
-				<ul class="sequence-canvas">
-					<li class="bg1">
-						<h2 class="title">Комплектующие</h2>
-						<h3 class="subtitle">Запчасти для ноутбуков, компьютеров, смартфонов, планшетов и прочей электроники. Кабели. Электронные компоненты</h3>
-						<img class="slide-img" src="{% static 'img/homepage-slider/slide1.png' %}" alt="Slide 1" />
-					</li>
-					<li class="bg1">
-						<h2 class="title">Инструменты</h2>
-						<h3 class="subtitle">Для пайки. Для измерений. Мелкие ручные инструменты. Программаторы</h3>
-						<img class="slide-img" src="{% static 'img/homepage-slider/slide2.png' %}" alt="Slide 2" />
-					</li>
-					<li class="bg1">
-						<h2 class="title">Расходные материалы</h2>
-						<h3 class="subtitle">Для пайки. Термоинтерфейсы. Прочая химия.</h3>
-						<img class="slide-img" src="{% static 'img/homepage-slider/slide3.png' %}" alt="Slide 3" />
-					</li>
-				</ul>
-				<div class="sequence-pagination-wrapper">
-					<ul class="sequence-pagination">
-						<li>1</li>
-						<li>2</li>
-						<li>3</li>
-					</ul>
-				</div>
-			</div>
-        </div>
-        <!-- End Homepage Slider -->
-
-		<!-- Products -->
-		<div class="section">
-	    	<div class="container">
-				<h2>Популярные товары</h2>
-				<div class="row">
-					<div class="col-sm-4">
-						<!-- Product -->
-						<div class="shop-item">
-							<!-- Product Image -->
-							<div class="image">
-								<a href="page-product-details.html"><img src="{% static 'img/example/product1.jpg' %}" alt="Item Name"></a>
-							</div>
-							<!-- Product Title -->
-							<div class="title">
-								<h3><a href="page-product-details.html">Lorem ipsum dolor</a></h3>
-							</div>
-							<!-- Product Available Colors-->
-							<div class="colors">
-								<span class="color-white"></span>
-								<span class="color-black"></span>
-								<span class="color-blue"></span>
-								<span class="color-orange"></span>
-								<span class="color-green"></span>
-							</div>
-							<!-- Product Price-->
-							<div class="price">
-								<span class="price-was">$959.99</span> $999.99
-							</div>
-							<!-- Product Description-->
-							<div class="description">
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse mattis, nulla id pretium malesuada, dui est laoreet risus, ac rhoncus eros diam id odio.</p>
-							</div>
-							<!-- Add to Cart Button -->
-							<div class="actions">
-								<a href="page-product-details.html" class="btn"><i class="icon-shopping-cart icon-white"></i> Подробнее <!-- Купить --></a>
-							</div>
-						</div>
-						<!-- End Product -->
-					</div>
-					<div class="col-sm-4">
-						<div class="shop-item">
-							<div class="image">
-								<a href="page-product-details.html"><img src="{% static 'img/example/product2.jpg' %}" alt="Item Name"></a>
-							</div>
-							<div class="title">
-								<h3><a href="page-product-details.html">Lorem ipsum dolor</a></h3>
-							</div>
-							<div class="colors">
-								<span class="color-white"></span>
-								<span class="color-black"></span>
-							</div>
-							<div class="price">
-								$999.99
-							</div>
-							<div class="description">
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse mattis, nulla id pretium malesuada, dui est laoreet risus, ac rhoncus eros diam id odio.</p>
-							</div>
-							<div class="actions">
-								<a href="page-product-details.html" class="btn"><i class="icon-shopping-cart icon-white"></i> Подробнее <!-- Купить --></a>
-							</div>
-						</div>
-					</div>
-					<div class="col-sm-4">
-						<div class="shop-item">
-							<div class="image">
-								<a href="page-product-details.html"><img src="{% static 'img/example/product3.jpg' %}" alt="Item Name"></a>
-							</div>
-							<div class="title">
-								<h3><a href="page-product-details.html">Lorem ipsum dolor</a></h3>
-							</div>
-							<div class="colors">
-								<span class="color-white"></span>
-								<span class="color-black"></span>
-								<span class="color-blue"></span>
-							</div>
-							<div class="price">
-								$999.99
-							</div>
-							<div class="description">
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse mattis, nulla id pretium malesuada, dui est laoreet risus, ac rhoncus eros diam id odio.</p>
-							</div>
-							<div class="actions">
-								<a href="page-product-details.html" class="btn"><i class="icon-shopping-cart icon-white"></i> Подробнее <!-- Купить --></a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-sm-4">
-						<div class="shop-item">
-							<div class="image">
-								<a href="page-product-details.html"><img src="{% static 'img/example/product4.jpg' %}" alt="Item Name"></a>
-							</div>
-							<div class="title">
-								<h3><a href="page-product-details.html">Lorem ipsum dolor</a></h3>
-							</div>
-							<div class="colors">
-								<span class="color-white"></span>
-								<span class="color-black"></span>
-								<span class="color-blue"></span>
-							</div>
-							<div class="price">
-								$999.99
-							</div>
-							<div class="description">
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse mattis, nulla id pretium malesuada, dui est laoreet risus, ac rhoncus eros diam id odio.</p>
-							</div>
-							<div class="actions">
-								<a href="page-product-details.html" class="btn"><i class="icon-shopping-cart icon-white"></i> Подробнее <!-- Купить --></a>
-							</div>
-						</div>
-					</div>
-					<div class="col-sm-4">
-						<div class="shop-item">
-							<div class="image">
-								<a href="page-product-details.html"><img src="{% static 'img/example/product5.jpg' %}" alt="Item Name"></a>
-							</div>
-							<div class="title">
-								<h3><a href="page-product-details.html">Lorem ipsum dolor</a></h3>
-							</div>
-							<div class="colors">
-								<span class="color-white"></span>
-								<span class="color-black"></span>
-								<span class="color-blue"></span>
-							</div>
-							<div class="price">
-								$999.99
-							</div>
-							<div class="description">
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse mattis, nulla id pretium malesuada, dui est laoreet risus, ac rhoncus eros diam id odio.</p>
-							</div>
-							<div class="actions">
-								<a href="page-product-details.html" class="btn"><i class="icon-shopping-cart icon-white"></i> Подробнее <!-- Купить --></a>
-							</div>
-						</div>
-					</div>
-					<div class="col-sm-4">
-						<div class="shop-item">
-							<div class="image">
-								<a href="page-product-details.html"><img src="{% static 'img/example/product6.jpg' %}" alt="Item Name"></a>
-							</div>
-							<div class="title">
-								<h3><a href="page-product-details.html">Lorem ipsum dolor</a></h3>
-							</div>
-							<div class="colors">
-								<span class="color-white"></span>
-								<span class="color-black"></span>
-							</div>
-							<div class="price">
-								$999.99
-							</div>
-							<div class="description">
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse mattis, nulla id pretium malesuada, dui est laoreet risus, ac rhoncus eros diam id odio.</p>
-							</div>
-							<div class="actions">
-								<a href="page-product-details.html" class="btn"><i class="icon-shopping-cart icon-white"></i> Подробнее <!-- Купить --></a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-	    </div>
-		<!-- End Products -->
-
-		<!-- Posts List -->
-        <div class="section blog-posts-wrapper">
-	    	<div class="container">
-				<h2>Что нового:</h2>
-				<div class="row">
-					<!-- Post -->
-					<div class="col-md-4 col-sm-6">
-						<div class="blog-post">
-							<!-- Post Info -->
-							<div class="post-info">
-								<div class="post-date">
-									<div class="date">30 JAN, 2020</div>
-								</div>
-								<div class="post-comments-count">
-									<a href="page-blog-post-right-sidebar.html" title="Show Comments"><i class="glyphicon glyphicon-comment icon-white"></i>11</a>
-								</div>
-							</div>
-							<!-- End Post Info -->
-							<!-- Post Image -->
-							<a href="page-blog-post-right-sidebar.html"><img src="{% static 'img/example/news1.jpg' %}" class="post-image" alt="Post Title"></a>
-							<!-- End Post Image -->
-							<!-- Post Title & Summary -->
-							<div class="post-title">
-								<h3><a href="page-blog-post-right-sidebar.html">Post Title</a></h3>
-							</div>
-							<div class="post-summary">
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse mattis, nulla id pretium malesuada, dui est laoreet risus, ac rhoncus eros diam id odio. Duis elementum ligula eu ipsum condimentum accumsan.</p>
-							</div>
-							<!-- End Post Title & Summary -->
-							<div class="post-more">
-								<a href="page-blog-post-right-sidebar.html" class="btn btn-small">Подробнее</a>
-							</div>
-						</div>
-					</div>
-					<!-- End Post -->
-					<div class="col-md-4 col-sm-6">
-						<div class="blog-post">
-							<div class="post-info">
-								<div class="post-date">
-									<div class="date">30 JAN, 2020</div>
-								</div>
-								<div class="post-comments-count">
-									<a href="page-blog-post-right-sidebar.html" title="Show Comments"><i class="glyphicon glyphicon-comment icon-white"></i>16</a>
-								</div>
-							</div>
-							<a href="page-blog-post-right-sidebar.html"><img src="{% static 'img/example/news2.jpg' %}" class="post-image" alt="Post Title"></a>
-							<div class="post-title">
-								<h3><a href="page-blog-post-right-sidebar.html">Another Post Title</a></h3>
-							</div>
-							<div class="post-summary">
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse mattis, nulla id pretium malesuada, dui est laoreet risus, ac rhoncus eros diam id odio. Duis elementum ligula eu ipsum condimentum accumsan.</p>
-							</div>
-							<div class="post-more">
-								<a href="page-blog-post-right-sidebar.html" class="btn btn-small">Подробнее</a>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4 col-sm-6">
-						<div class="blog-post">
-							<div class="post-info">
-								<div class="post-date">
-									<div class="date">30 JAN, 2020</div>
-								</div>
-								<div class="post-comments-count">
-									<a href="page-blog-post-right-sidebar.html" title="Show Comments"><i class="glyphicon glyphicon-comment icon-white"></i>57</a>
-								</div>
-							</div>
-							<a href="page-blog-post-right-sidebar.html"><img src="{% static 'img/example/news3.jpg' %}" class="post-image" alt="Post Title"></a>
-							<div class="post-title">
-								<h3><a href="page-blog-post-right-sidebar.html">Yet Another Post Title</a></h3>
-							</div>
-							<div class="post-summary">
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse mattis, nulla id pretium malesuada, dui est laoreet risus, ac rhoncus eros diam id odio. Duis elementum ligula eu ipsum condimentum accumsan.</p>
-							</div>
-							<div class="post-more">
-								<a href="page-blog-post-right-sidebar.html" class="btn btn-small">Подробнее</a>
-							</div>
-						</div>
-					</div>
-
-				</div>
-			</div>
-	    </div>
-	    <!-- End Posts List -->
-
-		<!-- Call to Action Bar -->
-	    <div class="section section-white">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12">
-						<div class="calltoaction-wrapper">
-							<h3>Остались вопросы? Позвони нам!</h3> <a href="tel:89050000000" class="btn btn-orange">8(905)000-00-00</a>
-						</div>
-					</div>
-				</div>
+{% block content %}
+		<img alt="full screen background image" src="{% static 'img/launch-bg.jpg' %}" class="full-screen-background" />
+		<div class="coming-soon-content">
+			<h3>Сейчас на сайте ведутся работы...<br/><b>Добавляем новые фичи! =)</b></h3>
+			<div class="coming-soon-subscribe container">
+                <div class="row">
+                    <div class="col-lg-4 col-lg-offset-4 col-sm-6 col-sm-offset-3">
+                        <div class="input-group">
+                            <input type="text" class="form-control input-lg" placeholder="Ваш номер:">
+                            <span class="input-group-btn">
+                                <button class="btn btn-lg" type="button">Перезвоните мне!</button>
+                            </span>
+                        </div>
+						<p> Оператор перезвонит Вам сразу, как будет свободен!</p>
+                    </div>
+                </div>
 			</div>
 		</div>
-		<!-- End Call to Action Bar -->
+{% endblock %}
 
 	    <!-- Footer -->
 	    <div class="footer">
@@ -418,7 +144,7 @@
 		    			<h3>Покупателям</h3>
 		    			<ul class="no-list-style footer-navigate-section">
 		    				<li><a href="page-blog-posts.html">О нас</a></li>
-		    				<li><a href="page-portfolio-3-columns-2.html">Новости</a></li>
+		    				<li><a href="news/">Новости</a></li>
 		    				<li><a href="page-products-3-columns.html">Как оформить заказ</a></li>
 		    				<li><a href="page-services-3-columns.html">Доставка и самовывоз</a></li>
 		    				<li><a href="page-pricing.html">Обработка персональных данных</a></li>
@@ -461,7 +187,3 @@
         <script src="{% static 'js/template.js' %}"></script>
     </body>
 </html>
-
-      {#% block content %#}
-{#      Some content 	#}
-      {#% endblock %#}

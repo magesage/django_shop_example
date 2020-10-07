@@ -1632,7 +1632,8 @@ span.color-red {
   padding-top: 20px;
 }
 .coming-soon-content {
-  margin-top: 5%;
+  margin-top: 15%;
+  margin-bottom: 15%;
   text-align: center;
 }
 .coming-soon-content h3 {

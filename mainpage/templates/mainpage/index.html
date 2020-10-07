@@ -1,14 +1,12 @@
 {% extends 'base.html' %}
 
-{% block title %}
-Хоба! Это главная страница сайта!
-{% endblock %}
+{#% block title %#}
+    {#Хоба! Это главная страница сайта!#}
+{#% endblock %#}
 
 {% block content %}
-<h1 class="mb-5">posts</h1>
-{% for name in names %}
-<p>
-    {{ name }}
-</p>
-{% endfor %}
+    {% include 'mainpage/inc/_slider.html' %}
+    {% include 'mainpage/inc/_products.html' %}
+    {% include 'news/inc/_mainpage_news.html' %}
+    {% include 'mainpage/inc/_call_to_action_bar.html' %}
 {% endblock %}
