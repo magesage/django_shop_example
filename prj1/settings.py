@@ -131,3 +131,6 @@ STATIC_ROOT = BASE_DIR.joinpath('static')
 STATICFILES_DIRS = [
     BASE_DIR.joinpath('prj1/static')
 ]
+
+MEDIA_ROOT = BASE_DIR.joinpath('media')
+MEDIA_URL = '/media/'

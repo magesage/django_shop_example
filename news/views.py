@@ -1,6 +1,7 @@
 from django.shortcuts import render
+from .models import News
 
 # Create your views here.
 def index(request):
-    n = ['Oleg', 'Masha', 'Olja', 'Ksu']
-    return render(request, 'news/index.html', context={'names': n})
+    posts = News.objects.all()
+    return render(request, 'news/index.html', context={'n': posts})
