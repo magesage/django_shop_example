@@ -15,99 +15,52 @@
 				</div>
 			</div>
 		</div>
-
         <div class="section">
 	        <div class="container">
-	        	<div class="row service-wrapper-row">
+
+				{% for p in page_obj.object_list %}
+				<div class="row service-wrapper-row blog-post">
         			<div class="col-sm-4">
         				<div class="service-image">
-        					<img src="{% static 'img/services1.jpg' %}" alt="Service Name">
+							{% if p.photo %}
+								<img src="/media/{{ p.photo }}" alt="{{ p.preview }}">
+							{% else %}
+        						<img src="{% static 'img/services3.jpg' %}" alt="Иллюстрация новости">
+							{% endif %}
         				</div>
         			</div>
         			<div class="col-sm-8">
-    					<h3>Vestibulum ante ipsum</h3>
-    					<p>
-    						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut porta lectus ut ante accumsan, sit amet consectetur nisi tempus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nam non justo dignissim, blandit urna a, hendrerit elit. Maecenas hendrerit rhoncus libero. Sed at eleifend velit.
-    					</p>
+    					<h3>{{ p.title }}</h3>
+    					<p>{{ p.preview }}</p>
+						<hr />
+						<p class="pull-right"><b>Добавлено:</b> {{ p.created_at|date:"Y.m.d" }} {% if p.category %}<b>Тема:</b> "{{ p.category }}{% endif %}"</p>
     				</div>
+
 				</div>
-				<div class="row service-wrapper-row">
-        			<div class="col-sm-4">
-        				<div class="service-image">
-        					<img src="{% static 'img/services2.jpg' %}" alt="Service Name">
-        				</div>
-        			</div>
-        			<div class="col-sm-8">
-    					<h3>Vestibulum ante ipsum</h3>
-    					<p>
-    						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut porta lectus ut ante accumsan, sit amet consectetur nisi tempus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nam non justo dignissim, blandit urna a, hendrerit elit. Maecenas hendrerit rhoncus libero. Sed at eleifend velit.
-    					</p>
-    				</div>
-				</div>
-				<div class="row service-wrapper-row">
-        			<div class="col-sm-4">
-        				<div class="service-image">
-        					<img src="{% static 'img/services3.jpg' %}" alt="Service Name">
-        				</div>
-        			</div>
-        			<div class="col-sm-8">
-    					<h3>Vestibulum ante ipsum</h3>
-    					<p>
-    						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut porta lectus ut ante accumsan, sit amet consectetur nisi tempus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nam non justo dignissim, blandit urna a, hendrerit elit. Maecenas hendrerit rhoncus libero. Sed at eleifend velit.
-    					</p>
-    				</div>
-				</div>
-				<div class="row service-wrapper-row">
-        			<div class="col-sm-4">
-        				<div class="service-image">
-        					<img src="{% static 'img/services3.jpg' %}" alt="Service Name">
-        				</div>
-					</div>
-        			<div class="col-sm-8">
-    					<h3>Vestibulum ante ipsum</h3>
-    					<p>
-    						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut porta lectus ut ante accumsan, sit amet consectetur nisi tempus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nam non justo dignissim, blandit urna a, hendrerit elit. Maecenas hendrerit rhoncus libero. Sed at eleifend velit.
-    					</p>
-    				</div>
-				</div>
-				<div class="row service-wrapper-row">
-        			<div class="col-sm-4">
-        				<div class="service-image">
-        					<img src="{% static 'img/services3.jpg' %}" alt="Service Name">
-        				</div>
-        			</div>
-        			<div class="col-sm-8">
-    					<h3>Vestibulum ante ipsum</h3>
-    					<p>
-    						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut porta lectus ut ante accumsan, sit amet consectetur nisi tempus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nam non justo dignissim, blandit urna a, hendrerit elit. Maecenas hendrerit rhoncus libero. Sed at eleifend velit.
-    					</p>
-    				</div>
-				</div>
-				<div class="row service-wrapper-row">
-        			<div class="col-sm-4">
-        				<div class="service-image">
-        					<img src="{% static 'img/services3.jpg' %}" alt="Service Name">
-        				</div>
-        			</div>
-        			<div class="col-sm-8">
-    					<h3>Vestibulum ante ipsum</h3>
-    					<p>
-    						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut porta lectus ut ante accumsan, sit amet consectetur nisi tempus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nam non justo dignissim, blandit urna a, hendrerit elit. Maecenas hendrerit rhoncus libero. Sed at eleifend velit.
-    					</p>
-    				</div>
-				</div>
-				<nav class="text-center">
+				{% endfor %}
+
+				{% if page_obj.has_other_pages %}
+					<nav class="text-center">
 					<ul class="pagination pagination-lg">
-						<li><a href="#">&laquo;</a></li>
-						<li><a href="#">1</a></li>
-						<li><a href="#">2</a></li>
-						<li class="active"><a href="#">3</a></li>
-						<li><a href="#">4</a></li>
-						<li><a href="#">5</a></li>
-						<li><a href="#">&raquo;</a></li>
+
+						{% if page_obj.has_previous %}
+							<li><a href="?page={{ page_obj.previous_page_number }}">&laquo;</a></li>
+						{% endif %}
+						{% for p in page_obj.paginator.page_range %}
+							{% if p == page_obj.number %}
+								<li class="active"><a href="#">{{ p }}</a></li>
+							{% elif p > page_obj.number|add:-3 and p < page_obj.number|add:3 %}
+								<li><a href="?page={{ p }}">{{ p }}</a></li>
+							{% endif %}
+						{% endfor %}
+						{% if page_obj.has_next %}
+							<li><a href="?page={{ page_obj.next_page_number }}">&raquo;</a></li>
+						{% endif %}
 					</ul>
 				</nav>
-	        </div>
+				{% endif %}
+
+			</div>
 	    </div>
 
 {% endblock %}
