@@ -8,10 +8,12 @@ class News(models.Model):
     content = models.TextField(verbose_name='Текст статьи')
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='Дата публикации')
     updated_at = models.DateTimeField(auto_now=True, verbose_name='Обновлено')
-    photo = models.ImageField(upload_to='photos/news/%Y/%m/%d', blank=True, verbose_name='Фото')
+    photo = models.ImageField(upload_to='photos/news/%Y/%m/%d/', blank=True, verbose_name='Фото')
     is_published = models.BooleanField(default=True, verbose_name='Опубликовано')
     slug = models.SlugField(max_length=100, unique=True)
     category = models.ForeignKey('NewsCategory', on_delete=models.PROTECT, null=True, blank=True, verbose_name='Категория')
+    meta_keywords = models.CharField(blank=True, max_length=200)
+    meta_description = models.TextField(blank=True, max_length=250)
 
     def __str__(self):
         return '{}'.format(self.title)
