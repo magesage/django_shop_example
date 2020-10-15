@@ -1,4 +1,5 @@
 from django.db import models
+from django.shortcuts import reverse
 
 
 # Create your models here.
@@ -17,6 +18,9 @@ class News(models.Model):
 
     def __str__(self):
         return '{}'.format(self.title)
+
+    def get_absolute_url(self):
+        return reverse('news_article_url', kwargs={'slug': self.slug})
 
     class Meta:
         verbose_name = 'Новость'

@@ -23,17 +23,17 @@
         			<div class="col-sm-4">
         				<div class="service-image">
 							{% if p.photo %}
-								<img src="/media/{{ p.photo }}" alt="{{ p.preview }}">
+								<a href="{{ p.get_absolute_url }}"><img src="/media/{{ p.photo }}" alt="{{ p.preview }}"></a>
 							{% else %}
-        						<img src="{% static 'img/services3.jpg' %}" alt="Иллюстрация новости">
+        						<a href="{{ p.get_absolute_url }}"><img src="{% static 'img/example/news1.jpg' %}" alt="Иллюстрация новости"></a>
 							{% endif %}
         				</div>
         			</div>
         			<div class="col-sm-8">
-    					<h3>{{ p.title }}</h3>
+    					<a href="{{ p.get_absolute_url }}"><h3>{{ p.title }}</h3></a>
     					<p>{{ p.preview }}</p>
 						<hr />
-						<p class="pull-right"><b>Добавлено:</b> {{ p.created_at|date:"Y.m.d" }} {% if p.category %}<b>Тема:</b> "{{ p.category }}{% endif %}"</p>
+						<p class="pull-right"><b>Добавлено:</b> {{ p.created_at|date:"Y.m.d" }} {% if p.category %}<a href="#"><b>Тема:</b> "{{ p.category }}"</a>{% endif %}</p>
     				</div>
 
 				</div>

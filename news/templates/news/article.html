@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{#% block title %#}
+    {#Страница новости#}
+{#% endblock %#}
+
+{% block content %}
+<div class="section section-breadcrumbs">
+			<div class="container">
+				<!--div class="row">
+					<div class="col-md-12">
+						<h1>Blog Post (Sidebar Right)</h1>
+					</div>
+				</div-->
+			</div>
+		</div>
+
+        <div class="section">
+	    	<div class="container">
+				<div class="row">
+					<!-- Blog Post -->
+					<div class="col-sm-12">
+						<div class="blog-post blog-single-post">
+							<div class="single-post-title">
+								<h3>{{ page_obj.title }}</h3>
+							</div>
+							<div class="single-post-info">
+								<i class="glyphicon glyphicon-time"></i>{{ page_obj.created_at|date:"d b Y" }} <!--a href="#" title="Показать комментарии"><i class="glyphicon glyphicon-comment"></i>11</a-->
+							</div>
+							{% if page_obj.photo %}
+								<div class="single-post-image">
+									<img src="/media/{{ page_obj.photo }}" alt="{{ page_obj.preview }}">
+								</div>
+							{% else %}
+								<div class="single-post-image">
+								<img src="{% static 'img/example/news1.jpg' %}" alt='Иллюстрация новости'">
+								</div>
+							{% endif %}
+							<div class="single-post-content">
+								<p>{{ page_obj.content }}</p>
+							</div>
+							{#% include 'news/inc/_comments.html' %#}
+						</div>
+					</div>
+					<!-- End Blog Post -->
+
+				</div>
+			</div>
+	    </div>
+    {% include 'mainpage/inc/_call_to_action_bar.html' %}
+{% endblock %}

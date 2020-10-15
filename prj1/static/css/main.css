@@ -5,7 +5,7 @@ body {
   background: url(../img/page-background.png);
 }
 .section {
-  padding: 30px 0;
+  /* padding: 30px 0; */
   -webkit-transform: translateZ(0);
   -moz-transform: translateZ(0);
   -o-transform: translateZ(0);
@@ -14,11 +14,14 @@ body {
 }
 .section-white {
   background: #FFF;
+  padding: 30px;
 }
 .section .container:first-child h1,
-.section .container:first-child h2,
 .section .container:first-child h3 {
-  margin-top: 0;
+  /* margin-top: 0; */
+  font-weight: 700;
+}
+.section .container:first-child h2{
   font-weight: 700;
 }
 .input-micro {
@@ -84,7 +87,7 @@ h2 {
   font-size: 2em;
   border-bottom: 2px solid #53555c;
   line-height: 1.5em;
-  margin: 30px 0;
+  margin: 20px 0 0 0;
   padding-left: 10px;
 }
 h3 {
@@ -134,11 +137,12 @@ a:hover {
 .service-wrapper-row {
   padding: 10px 0;
 }
-.service-wrapper-row h3 {
+/* .service-wrapper-row h3 {
   padding-top: 15px;
-}
+  margin-top: 0;
+} */
 .service-wrapper-row .service-image {
-  padding-top: 15px;
+  /* padding-top: 15px; */
   text-align: center;
 }
 .service-wrapper-row .service-image img {
@@ -391,6 +395,7 @@ a:hover {
   line-height: 36px;
   margin-right: 10px;
   margin-bottom: 0;
+  margin-top: 0;
 }
 .calltoaction-wrapper a {
   vertical-align: top;
@@ -626,7 +631,7 @@ a:hover {
   -webkit-box-shadow: 0 0 5px #000;
   -moz-box-shadow: 0 0 5px #000;
   box-shadow: 0 0 5px #000;
-  color: 0 0 5px #000;
+  /* color: 0 0 5px #000; */
 }
 .single-post-content {
   margin: 30px 0 20px 0;
@@ -1697,7 +1702,7 @@ span.color-red {
 .section-breadcrumbs h1 {
   color: #FAFAFA;
   font-size: 1.6em;
-  margin-bottom: 0;
+  margin: 20px;
   text-transform: none;
 }
 /*--------------------------------------------------------------------------

@@ -4,82 +4,34 @@
 	    	<div class="container">
 				<h2>Что нового:</h2>
 				<div class="row">
-					<!-- Post -->
-					<div class="col-md-4 col-sm-6">
-						<div class="blog-post">
-							<!-- Post Info -->
-							<div class="post-info">
-								<div class="post-date">
-									<div class="date">30 JAN, 2020</div>
+					{% for n in news %}
+						<div class="col-md-4 col-sm-6">
+							<div class="blog-post">
+								<div class="post-info">
+									<div class="post-date">
+										<div class="date">{{ n.created_at|date:"d b Y" }}</div>
+									</div>
+									<!--div class="post-comments-count">
+										<a href="#" title="Show Comments"><i class="glyphicon glyphicon-comment icon-white"></i>11</a>
+									</div-->
 								</div>
-								<!--div class="post-comments-count">
-									<a href="#" title="Show Comments"><i class="glyphicon glyphicon-comment icon-white"></i>11</a>
-								</div-->
-							</div>
-							<!-- End Post Info -->
-							<!-- Post Image -->
-							<a href="#"><img src="{% static 'img/example/news1.jpg' %}" class="post-image" alt="Post Title"></a>
-							<!-- End Post Image -->
-							<!-- Post Title & Summary -->
-							<div class="post-title">
-								<h3><a href="#">Post Title</a></h3>
-							</div>
-							<div class="post-summary">
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse mattis, nulla id pretium malesuada, dui est laoreet risus, ac rhoncus eros diam id odio. Duis elementum ligula eu ipsum condimentum accumsan.</p>
-							</div>
-							<!-- End Post Title & Summary -->
-							<div class="post-more">
-								<a href="#" class="btn btn-small">Подробнее</a>
+								{% if n.photo %}
+									<a href="{{ n.get_absolute_url }}"><img src="/media/{{ n.photo }}" class="post-image" alt="{{ n.preview }}"></a>
+								{% else %}
+									<a href="{{ n.get_absolute_url }}"><img src="{% static 'img/example/news1.jpg' %}" class="post-image" alt="Иллюстрация новости"></a>
+								{% endif %}
+								<div class="post-title">
+									<h3><a href="{{ n.get_absolute_url }}">{{ n.title }}</a></h3>
+								</div>
+								<div class="post-summary">
+									<p>{{ n.preview }}</p>
+								</div>
+								<div class="post-more">
+									<a href="{{ n.get_absolute_url }}" class="btn btn-small">Подробнее</a>
+								</div>
 							</div>
 						</div>
-					</div>
-					<!-- End Post -->
-					<div class="col-md-4 col-sm-6">
-						<div class="blog-post">
-							<div class="post-info">
-								<div class="post-date">
-									<div class="date">30 JAN, 2020</div>
-								</div>
-								<!--div class="post-comments-count">
-									<a href="#" title="Show Comments"><i class="glyphicon glyphicon-comment icon-white"></i>16</a>
-								</div-->
-							</div>
-							<a href="#"><img src="{% static 'img/example/news2.jpg' %}" class="post-image" alt="Post Title"></a>
-							<div class="post-title">
-								<h3><a href="#">Another Post Title</a></h3>
-							</div>
-							<div class="post-summary">
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse mattis, nulla id pretium malesuada, dui est laoreet risus, ac rhoncus eros diam id odio. Duis elementum ligula eu ipsum condimentum accumsan.</p>
-							</div>
-							<div class="post-more">
-								<a href="#" class="btn btn-small">Подробнее</a>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4 col-sm-6">
-						<div class="blog-post">
-							<div class="post-info">
-								<div class="post-date">
-									<div class="date">30 JAN, 2020</div>
-								</div>
-								<!--div class="post-comments-count">
-									<a href="#" title="Show Comments"><i class="glyphicon glyphicon-comment icon-white"></i>57</a>
-								</div-->
-							</div>
-							<a href="#"><img src="{% static 'img/example/news3.jpg' %}" class="post-image" alt="Post Title"></a>
-							<div class="post-title">
-								<h3><a href="#">Yet Another Post Title Title Title 123</a></h3>
-							</div>
-							<div class="post-summary">
-								<p>Lorem  ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse mattis, nulla id pretium malesuada, dui est laoreet risus, ac rhoncus eros diam id odio. Duis elementum ligula eu ipsum condimentum accumsan accumsan accumsan accumsan accumsan.</p>
-							</div>
-							<div class="post-more">
-								<a href="#" class="btn btn-small">Подробнее</a>
-							</div>
-						</div>
-					</div>
-
+					{% endfor %}
 				</div>
 			</div>
 	    </div>
-	    <!-- End Posts List -->
