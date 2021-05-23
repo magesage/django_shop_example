@@ -1,2 +1,2 @@
 # django_shop_example
-Some description here
+Some description will be here later... Sorry.

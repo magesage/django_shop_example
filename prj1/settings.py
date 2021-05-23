@@ -134,3 +134,7 @@ STATICFILES_DIRS = [
 
 MEDIA_ROOT = BASE_DIR.joinpath('media')
 MEDIA_URL = '/media/'
+
+#Fix for Django 3.2 and higer. It is need to avoid unwanted migrations in the future.
+#https://docs.djangoproject.com/en/3.2/releases/3.2/#customizing-type-of-auto-created-primary-keys
+DEFAULT_AUTO_FIELD='django.db.models.AutoField'
