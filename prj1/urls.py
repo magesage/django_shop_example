@@ -17,13 +17,14 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
+from decouple import config
 
 
 
 urlpatterns = [
     path('', include('mainpage.urls')),
-    path('admin/', admin.site.urls),
     path('news/', include('news.urls')),
+    path(config('ADMIN_URL', default='admin/', cast=str), admin.site.urls),
 ]
 
 if settings.DEBUG:
